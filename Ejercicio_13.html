@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fecha = prompt("Escribe tu fecha de cumpleaños en éste formato: DD-MM-AAAA");
+        function numberV1(i){
+            return (parseInt(i.charAt(0)+i.charAt(1))+parseInt(i.charAt(3)+i.charAt(4))+parseInt(i.charAt(6)+i.charAt(7)+i.charAt(8)+i.charAt(9)))+"";           
+        }
+        function numberV2(i){
+            return parseInt(i.charAt(0))+parseInt(i.charAt(1))+parseInt(i.charAt(2))+parseInt(i.charAt(3));
+        }
+        let paso1 = numberV1(fecha);
+        let paso2 = numberV2((paso1));
+        console.log(paso2);
+    </script>
+</body>
+</html>
