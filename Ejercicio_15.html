@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let password = "";
+        let answerComment = "";
+        let lengthCheck = false;
+        let numberCheck = false;
+        let firstCharCheck = false;
+        do {
+            password = prompt("Introduce una contraseña");
+            answerComment = "";
+            // Debe tener 8 caracteres como mínimo.
+            lengthCheck = false;
+            if(password.length >= 8){
+                lengthCheck = true;
+                answerComment += "OK -> La contraseña tiene "+password.length+" > 8 carácteres.\n";
+            }else{
+                answerComment += "NO OK -> La contraseña tiene menos de 8 carácteres.\n";
+            }
+            // La contraseña deberá contener números. (buscar una función)            
+            numberCheck = false;
+            if(/\d/.test(password)){
+                numberCheck = true;
+                answerComment += "OK -> La contraseña contiene al menos un número.\n";
+            }else{
+                answerComment += "NO OK -> La contraseña debe contener al menos un número.\n";
+            }
+            // La primera letra tiene que ser en mayúsculas.(buscar una función)
+            firstCharCheck = false;
+            if(/[A-Z]/.test(password.charAt(0))){
+                firstCharCheck = true;
+                answerComment += "OK -> La contraseña tiene el primer caracter en mayúscula.";
+            }else{
+                answerComment += "NO OK -> La contraseña no tiene el primer caracter en mayúscula.";
+            }
+            // Check de las tres condiciones anteriores
+            alert(answerComment);
+        } while (lengthCheck == false || numberCheck == false || firstCharCheck == false);
+    </script>
+</body>
+</html>
